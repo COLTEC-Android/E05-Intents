@@ -58,7 +58,8 @@ public class MyProfileActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         ImageView imageView = findViewById(R.id.profile_photo);
 
-        //testa se o código passado como parâmetro é igual ao codigo da foto e se a execução ocorreu corretamente
+        //testa se o código passado como parâmetro é igual ao codigo da foto
+        // e se a execução ocorreu corretamente
         if(requestCode == PHOTO_CODE && resultCode == Activity.RESULT_OK){
             Bitmap profilePhoto = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(profilePhoto);

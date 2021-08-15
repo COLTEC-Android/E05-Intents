@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         //testa se o código solicitado é 0, como foi setado na linha 31
+        //
         if(requestCode == 0){
             if(resultCode == RESULT_OK){ //testa se a execução ocorreu corretamente
                 // armazena  que foi codificado

@@ -114,6 +114,5 @@
             android:text="Send an email"/>
 
     </LinearLayout>
-
-
+    
 </RelativeLayout>
