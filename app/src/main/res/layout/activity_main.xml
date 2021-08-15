@@ -16,4 +16,14 @@
         android:text="My profile"
         android:textColor="@color/colorBasic" />
 
+    <Button
+        android:id="@+id/btn_scan_code"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/btn_profile"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:text="Code Reader"
+        android:textColor="@color/colorBasic" />
 </RelativeLayout>
