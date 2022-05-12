@@ -1,18 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/purple_200"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        style="@style/texto"
+        android:text="Rafael Assunçao"
+        android:layout_marginTop="70dp"
+        android:layout_toRightOf="@id/fotoPerfil"
+        android:id="@+id/txtNome"/>
+    <TextView
+        style="@style/texto"
+        android:text="19 anos"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/fotoPerfil"
+        android:layout_below="@id/txtNome"
+        android:id="@+id/txtIdade"/>
+    <TextView
+        android:text="Email:"
+        style="@style/texto"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/fotoPerfil"
+        android:id="@+id/emailPadrao"/>
+    <TextView
+        android:text="rafaaslat@gmail.com"
+        style="@style/texto"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/fotoPerfil"
+        android:layout_toRightOf="@+id/emailPadrao"
+        android:id="@+id/txtEmail"/>
+    <TextView
+        android:text="Telefone:"
+        style="@style/texto"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/emailPadrao"
+        android:id="@+id/telPadrao"/>
+    <TextView
+        style="@style/texto"
+        android:text="3198466490"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/telPadrao"
+        android:layout_below="@id/txtEmail"
+        android:id="@+id/txtTelefone"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/fotopadrao"
+        android:layout_gravity="center"
+        android:id="@+id/fotoPerfil"/>
+
+</RelativeLayout>
