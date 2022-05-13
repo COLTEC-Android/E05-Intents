@@ -49,12 +49,57 @@
         android:id="@+id/txtTelefone"/>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginTop="70dp"
         android:layout_marginLeft="10dp"
         android:src="@drawable/fotopadrao"
         android:layout_gravity="center"
         android:id="@+id/fotoPerfil"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leitor Código de Barras"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/gray"
+        android:textColor="@color/black"
+        android:layout_below="@id/txtTelefone"
+        android:layout_centerInParent="true"
+        android:id="@+id/btnLeitor"/>
+
+    <TextView
+        style="@style/texto"
+        android:text="Resultado: "
+        android:layout_below="@id/btnLeitor"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        android:id="@+id/resPadrao"/>
+
+    <TextView
+        style="@style/texto"
+        android:text="Tipo Lido: "
+        android:layout_below="@id/resPadrao"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        android:id="@+id/tipoLidoPadrao"/>
+
+    <TextView
+        style="@style/texto"
+        android:layout_toRightOf="@id/resPadrao"
+        android:text=""
+        android:layout_below="@id/btnLeitor"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/darkGray"
+        android:id="@+id/txtResultadoLeitor"/>
+
+    <TextView
+        style="@style/texto"
+        android:layout_toRightOf="@id/tipoLidoPadrao"
+        android:text=""
+        android:layout_below="@id/resPadrao"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/darkGray"
+        android:id="@+id/txtTipoLeitor"/>
 
 </RelativeLayout>
