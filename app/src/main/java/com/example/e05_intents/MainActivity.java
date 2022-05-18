@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private static int FOTO_CODE = 1;
+    private static int LEITOR_CODE = 2;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Button fotoBtn = findViewById(R.id.btn_photo);
         TextView telefone = findViewById(R.id.txt_telefone);
         TextView email = findViewById(R.id.txt_email);
+        Button leitorBtn = findViewById(R.id.btn_leitor);
 
         fotoBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -51,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        leitorBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent leitorIntent = new Intent("com.google.zxing.client.android.SCAN");
+                startActivityForResult(leitorIntent, LEITOR_CODE);
+            }
+        });
+
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -61,6 +71,28 @@ public class MainActivity extends AppCompatActivity {
             Bitmap photoNew = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photoNew);
         }
+
+        if(requestCode == LEITOR_CODE && resultCode == RESULT_OK){
+
+            TextView txtRes = findViewById(R.id.res);
+            TextView formatResult = findViewById(R.id.tipo_Leitor);
+            TextView scanResult = findViewById(R.id.respota_Leitor);
+            TextView txtTipo = findViewById(R.id.tipo_Lido);
+
+            String contents = data.getStringExtra("SCAN_RESULT");
+
+            String format = data.getStringExtra("SCAN_RESULT_FORMAT");
+
+            Log.d("Leitor:", contents);
+            Log.d("Leitor: ", format);
+
+            txtRes.setVisibility(View.VISIBLE);
+            txtTipo.setVisibility(View.VISIBLE);
+            scanResult.setText(contents);
+            formatResult.setText(format);
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
 }
