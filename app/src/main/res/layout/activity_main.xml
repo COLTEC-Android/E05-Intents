@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,10 +9,64 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Brenda Sales"
+        android:textSize="30dp"
+        android:id="@+id/txt_nome"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/txt_nome"
+        android:id="@+id/img_foto"
+        android:src="@drawable/img"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_foto"
+        android:layout_alignParentRight="true"
+        android:text="Alterar imagem"
+        android:textSize="8dp"
+        android:id="@+id/btn_alterar_foto"
+
+        />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="24 anos"
+    android:textSize="20dp"
+    android:id="@+id/txt_idade"
+    android:layout_below="@+id/btn_alterar_foto"
+
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone de contato: (31) 99999-9999"
+        android:textSize="20dp"
+        android:id="@+id/txt_telefone"
+        android:layout_below="@+id/txt_idade"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email de contato: brenda@email.com"
+        android:textSize="20dp"
+        android:id="@+id/txt_email"
+        android:layout_below="@+id/txt_telefone"
+
+        />
+
+
+
+
+
+</RelativeLayout>
