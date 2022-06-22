@@ -54,6 +54,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnLeitor= findViewById(R.id.leitor);
+        btnLeitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent leitor = new Intent();
+                leitor.setAction("com.google.zxing.client.android.SCAN");
+
+                startActivityForResult(leitor, 0);
+            }
+        });
 
     }
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
@@ -65,7 +75,18 @@ public class MainActivity extends AppCompatActivity {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
         }
-    }
+        //para o resultado do leitor
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                // contents contains whatever was encoded
+                String contents = data.getStringExtra("SCAN_RESULT");
 
+                // Format contains the type of code i.e. UPC, EAN, QRCode etc...
+                String format = data.getStringExtra("SCAN_RESULT_FORMAT");
+
+
+            }
+        }
+    }
 
 }

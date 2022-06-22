@@ -43,5 +43,12 @@
         android:layout_height="wrap_content"
         android:text="Telefone:33181920"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leitor"
+        android:text="Leitor"
+        />
 
 </LinearLayout>
+
