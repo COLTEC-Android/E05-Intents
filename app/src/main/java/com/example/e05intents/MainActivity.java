@@ -42,7 +42,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        TextView textEmail = findViewById(R.id.email);
+        textEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view1) {
+                Intent sendEmail = new Intent();
+                sendEmail.setAction(Intent.ACTION_SEND);
+                sendEmail.putExtra(Intent.EXTRA_TEXT,"");
+                sendEmail.setType("text/plain");
+                startActivity(sendEmail);
+            }
+        });
 
 
     }
