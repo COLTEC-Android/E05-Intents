@@ -1,4 +1,4 @@
-package com.example.e05_intents;
+package com.example.e05intents;
 
 import org.junit.Test;
 
