@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
         ImageView imageView = findViewById(R.id.foto);
-
+        TextView texto = findViewById(R.id.text_leitor);
         if (requestCode == FOTO_CODE && resultCode == Activity.RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
@@ -78,11 +78,10 @@ public class MainActivity extends AppCompatActivity {
         //para o resultado do leitor
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
-                // contents contains whatever was encoded
-                String contents = data.getStringExtra("SCAN_RESULT");
 
-                // Format contains the type of code i.e. UPC, EAN, QRCode etc...
+                String contents = data.getStringExtra("SCAN_RESULT");
                 String format = data.getStringExtra("SCAN_RESULT_FORMAT");
+                texto.setText(contents);
 
 
             }
