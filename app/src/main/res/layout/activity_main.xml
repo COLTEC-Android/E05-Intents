@@ -17,10 +17,22 @@
         >
     </TextView>
 
+    <TextView
+        android:id="@+id/tv_idade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Idade: 26"
+        android:textSize="30sp"
+        android:layout_below="@+id/img_photo"
+        >
+    </TextView>
+
     <ImageView
         android:id="@+id/img_photo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/ic_launcher_background"
         android:layout_below="@+id/tv_name"
@@ -28,19 +40,60 @@
         >
     </ImageView>
 
-
     <TextView
-        android:id="@+id/tv_number"
+        android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="12345689"
+        android:text="robert@gmail.com"
         android:textSize="30sp"
         android:textColor="#03A9F4"
-        android:layout_below="@id/img_photo"
+        android:layout_below="@id/tv_idade"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail:"
+        android:textSize="30sp"
+        android:layout_below="@id/tv_idade"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         >
 
     </TextView>
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="123456789"
+        android:textSize="30sp"
+        android:textColor="#03A9F4"
+        android:layout_below="@id/tv_email"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone:"
+        android:textSize="30sp"
+        android:layout_below="@id/tv_email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        >
+
+    </TextView>
+
+
 
 </RelativeLayout>
