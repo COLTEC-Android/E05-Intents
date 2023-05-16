@@ -94,6 +94,30 @@
 
     </TextView>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCANNER"
+        android:layout_below="@+id/tv_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/btn_scanner"
+        >
+
+    </Button>
+
+    <TextView
+        android:id="@+id/txt_codigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Codigo de barras"
+        android:textSize="30sp"
+        android:layout_below="@id/btn_scanner"
+        android:layout_centerHorizontal="true"
+        >
+
+    </TextView>
+
 
 
 </RelativeLayout>
