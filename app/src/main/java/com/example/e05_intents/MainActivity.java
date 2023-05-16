@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private static final int PHOTO_CODE = 1;
+    private static final int SCAN_CODE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,18 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnEditPhoto = findViewById(R.id.btnEdit);
         TextView email = findViewById(R.id.profileMail);
         TextView phone = findViewById(R.id.profileTel);
+
+        Button btnScan = findViewById(R.id.btn_scan);
+
+        btnScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent scanIntent = new Intent("com.google.zxing.client.android.SCAN");
+
+                startActivityForResult(scanIntent, SCAN_CODE);
+            }
+        });
+
 
         btnEditPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
 
             ImageView ivPhoto = this.findViewById(R.id.imgProfile);
             ivPhoto.setImageBitmap(photo);
+        }
+
+        if(requestCode == SCAN_CODE && resultCode == RESULT_OK){
+            String code = data.getStringExtra("SCAN_RESULT");
+
+            TextView lblCode = this.findViewById(R.id.lbl_code);
+            lblCode.setText(code);
         }
 
     }

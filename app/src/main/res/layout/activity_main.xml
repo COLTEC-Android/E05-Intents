@@ -82,5 +82,37 @@
         android:layout_below="@id/imgProfile"
 
         />
+
+    <TextView
+        android:id="@+id/lblScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileAge"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+
+        android:text="Escaneie um código de Barras: "
+        android:textSize="25dp"
+        />
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/lblScan"
+        android:layout_centerHorizontal="true"
+        android:text="Scan"
+        />
+
+    <TextView
+        android:id="@+id/lbl_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:layout_below="@id/btn_scan"
+        android:layout_centerHorizontal="true"
+        />
     
 </RelativeLayout>
